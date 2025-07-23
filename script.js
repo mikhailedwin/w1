@@ -1,12 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
   const toggle = document.getElementById('themeToggle');
   const body = document.body;
+
   const tagline = document.getElementById('tagline');
+
+
   const saved = localStorage.getItem('theme');
   if (saved === 'light') {
     body.classList.add('light');
     toggle.textContent = '☀️';
   }
+
 
   const text = 'Sleepwalker';
   let idx = 0;
@@ -39,10 +43,12 @@ document.addEventListener('DOMContentLoaded', () => {
     observer.observe(sec);
   });
 
+
   const header = document.querySelector('header');
   document.addEventListener('mousemove', e => {
     const x = (e.clientX / window.innerWidth - 0.5) * 10;
     const y = (e.clientY / window.innerHeight - 0.5) * 10;
     header.style.transform = `rotateX(${y}deg) rotateY(${-x}deg)`;
   });
+
 });
